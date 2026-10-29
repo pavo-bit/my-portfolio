@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="mBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c101d" />
+      <stop offset="50%" stop-color="#070a12" />
+      <stop offset="100%" stop-color="#030508" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="mBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Radial Core Glow -->
+    <radialGradient id="mCoreGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Left Pillar Gradient -->
+    <linearGradient id="mStemLeft" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#3730a3" />
+      <stop offset="60%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <!-- Right Pillar Gradient -->
+    <linearGradient id="mStemRight" x1="100%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="60%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <!-- Central Chevron / Folding Facet Gradient -->
+    <linearGradient id="mChevronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#6366f1" />
+      <stop offset="70%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+
+    <!-- Star Glow Gradient -->
+    <linearGradient id="mStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Soft Filter for Atmospheric Glow -->
+    <filter id="mGlowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Intense Sparkle Glow -->
+    <filter id="mStarGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="starBlur" />
+      <feComposite in="SourceGraphic" in2="starBlur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Tile -->
+  <rect width="512" height="512" rx="124" fill="url(#mBgGrad)" />
+  <rect x="3" y="3" width="506" height="506" rx="121" fill="none" stroke="url(#mBorderGrad)" stroke-width="2.5" />
+  
+  <!-- Subtle Internal Glow -->
+  <circle cx="256" cy="220" r="190" fill="url(#mCoreGlow)" />
+
+  <!-- Celestial Precision Star (Top Crest) -->
+  <g filter="url(#mStarGlow)">
+    <path d="M256 62 Q256 94 236 94 Q256 94 256 126 Q256 94 276 94 Q256 94 256 62 Z" fill="url(#mStarGrad)" />
+    <circle cx="256" cy="94" r="2.5" fill="#ffffff" />
+  </g>
+
+  <!-- Monogram M: Layered Architectural Form -->
+  <g filter="url(#mGlowFilter)">
+    <!-- Left Pillar -->
+    <path d="M112 384 V 186 C112 165 127 148 147 144 L165 140 C177 137 188 146 188 158 V 384 C188 393 180 400 171 400 H129 C120 400 112 393 112 384 Z" fill="url(#mStemLeft)" />
+
+    <!-- Right Pillar -->
+    <path d="M400 384 V 186 C400 165 385 148 365 144 L347 140 C335 137 324 146 324 158 V 384 C324 393 332 400 341 400 H383 C392 400 400 393 400 384 Z" fill="url(#mStemRight)" />
+
+    <!-- Central Chevron / Interlocking Facet -->
+    <path d="M152 144 L256 288 L360 144 C369 132 386 138 388 153 L388 172 C388 181 383 189 376 198 L269 336 C262 345 250 345 243 336 L136 198 C129 189 124 181 124 172 L124 153 C126 138 143 132 152 144 Z" fill="url(#mChevronGrad)" />
+
+    <!-- Elegant Light Highlights (Top Edge Reflections) -->
+    <path d="M129 146 L178 141" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.65" />
+    <path d="M383 146 L334 141" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.65" />
+    <path d="M152 147 L256 288 L360 147" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />
+    <path d="M136 198 L243 336" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.75" />
+    <path d="M376 198 L269 336" stroke="#c084fc" stroke-width="2" stroke-linecap="round" opacity="0.75" />
+  </g>
+</svg>
